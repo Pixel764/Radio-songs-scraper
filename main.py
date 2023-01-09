@@ -1,5 +1,5 @@
 import time
-
+import os
 import db
 from parser import parse
 import sys
