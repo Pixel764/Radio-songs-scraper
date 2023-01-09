@@ -2,7 +2,6 @@ import time
 
 import db
 from parser import parse
-from db import create_database
 import sys
 from dotenv import load_dotenv
 import schedule
@@ -22,7 +21,7 @@ def main():
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         if sys.argv[1] == 'create_database':
-            create_database()
+            db.create_database()
         else:
             print('Invalid argument')
     else:
