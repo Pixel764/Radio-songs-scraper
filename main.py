@@ -12,7 +12,8 @@ def main():
     load_dotenv()
     db.try_connection()
 
-    schedule.every(10).seconds.do(parse)
+    schedule.every(int(os.getenv("SCRAPE_TIME"))).seconds.do(parse)
+    parse()
     while True:
         schedule.run_pending()
         time.sleep(1)
